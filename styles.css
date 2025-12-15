@@ -1,0 +1,354 @@
+/* Reseteo básico */
+html,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Winky Sans", sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Header */
+.encabezado {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border-bottom: 5px solid #dee2e6;
+}
+
+/* Ajustes nav */
+.navbar-brand {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.nav-arreglos {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+/* Responsive del nav */
+@media (max-width: 1200px) {
+  .nav-link {
+    border-bottom: none !important;
+  }
+}
+
+
+main {
+  margin-top: 90px;
+}
+
+/* SECCIÓN INICIO - ACERCA DE MÍ*/
+.inicio {
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  max-width: 1100px;
+  border-bottom: 5px solid #dee2e6;
+  text-align: center;
+}
+
+.inicio-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Columna imagen */
+.inicio-imagen img {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Columna texto-tarjetas */
+.inicio-texto-tarjetas {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.inicio-texto h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.inicio-texto h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0;
+}
+
+/* Tarjetas */
+.inicio-tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.tarjeta {
+  flex: 1 1 220px;
+  min-width: 180px;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  font-size: 1.4rem
+}
+
+/* Animación tarjetas */
+.tarjeta:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.12),
+    0 0 0 1px rgba(13, 110, 253, 0.15);
+}
+
+/* Responsive inicio/acerca de mí */
+@media (max-width: 992px) {
+  .inicio-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .inicio-texto-tarjetas {
+    align-items: center;
+  }
+
+  .inicio-tarjetas {
+    justify-content: center;
+  }
+}
+
+
+/* SECCIÓN HABILIDADES */
+.habilidades {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  text-align: center;
+  border-bottom: 5px solid #dee2e6;
+}
+
+.habilidades h1 {
+  margin-bottom: 3rem;
+}
+
+/* Grid de habilidades */
+.grilla-habilidades {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+/* Columna */
+.columna-habilidad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.columna-habilidad h2 {
+  font-size: 1.3rem;
+}
+
+/* Iconos en cada columna */
+.lista-habilidades {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.habilidad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.habilidad img {
+  width: 60px;
+  height: 60px;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.nombre-habilidad {
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+}
+
+/* Efecto hover */
+.habilidad:hover img {
+  transform: scale(1.2);
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.25));
+}
+
+/* Responsive habilidades */
+@media (max-width: 1000px) {
+  .grilla-habilidades {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 750px) {
+  .grilla-habilidades {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* SECCIÓN ESTUDIOS */
+.estudios {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  text-align: center;
+  border-bottom: 5px solid #dee2e6;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  padding: 40px 0;
+  flex-wrap: wrap;
+}
+
+.flip-card {
+  width: 480px;
+  height: 350px;
+  perspective: 1000px;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* Estilos frente tarjta */
+.flip-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Estilos revesro tarjeta */
+.flip-back {
+  background: #f8f9fa;
+  color: #212529;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.flip-back h3 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.flip-back p {
+  margin: 0;
+  font-size: 1.5rem;
+  opacity: 0.9;
+}
+
+/*Responsive estudios*/
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* FOOTER */
+.footer {
+  border-top: 5px solid #dee2e6;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+.contenedor-footer h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.3rem;
+}
+
+.contenedor-footer p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* Iconos */
+.footer {
+  border-top: 5px solid #dee2e6;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+/* Elementos del contendor del footer */
+.contenedor-footer i {
+  font-size: 1.8rem;
+  margin: 0 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+  color: #212529;
+}
+
+.contenedor-footer h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.3rem;
+}
+
+.contenedor-footer p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* Iconos */
+.contenedor-footer i {
+  font-size: 1.8rem;
+  margin: 0 0.6rem;
+  cursor: pointer;
+  color: #212529;
+}
+
+.contenedor-footer i:hover {
+  color: #0f1011c0;
+}
