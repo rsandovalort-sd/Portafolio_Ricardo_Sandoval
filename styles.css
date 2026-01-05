@@ -374,7 +374,7 @@ main {
 /* Responsive proyectos */
 @media (max-width: 768px) {
   .proyecto-card {
-    max-width: 60%;
+    max-width: 50%;
   }
 }
 
