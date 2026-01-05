@@ -1,4 +1,4 @@
-/* Reseteo básico */
+/* Reseteo */
 html,
 body {
   box-sizing: border-box;
@@ -37,96 +37,100 @@ body {
   }
 }
 
-
 main {
   margin-top: 90px;
 }
 
-/* SECCIÓN INICIO - ACERCA DE MÍ*/
+/* SECCIÓN ACERCA DE MÍ */
 .inicio {
   margin: 0 auto;
   padding: 4rem 2rem;
   max-width: 1100px;
   border-bottom: 5px solid #dee2e6;
+}
+
+/* Título principal */
+.inicio-titulo {
   text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
 }
 
 .inicio-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
+  grid-template-columns: 1fr 1.3fr 1fr;
   gap: 2rem;
   align-items: center;
 }
 
-/* Columna imagen */
-.inicio-imagen img {
+.inicio-centro {
+  display: flex;
+  justify-content: center;
+}
+
+/* Imagen */
+.inicio-centro img {
   width: 100%;
-  max-width: 550px;
+  max-width: 420px;
   height: auto;
   border-radius: 12px;
   display: block;
-  margin: 0 auto;
 }
 
-/* Columna texto-tarjetas */
-.inicio-texto-tarjetas {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-}
-
-.inicio-texto h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.inicio-texto h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0;
-}
-
-/* Tarjetas */
+/* Contenedores tarjetas */
 .inicio-tarjetas {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 2rem;
 }
 
+.inicio-tarjetas.izquierda {
+  align-items: flex-end;
+}
+
+.inicio-tarjetas.derecha {
+  align-items: flex-start;
+}
+
+/* Tarjetas */
 .tarjeta {
-  flex: 1 1 220px;
-  min-width: 180px;
+  width: 100%;
+  max-width: 260px;
   padding: 1.5rem;
   background: #f8f9fa;
   border-radius: 8px;
   border: 1px solid #dee2e6;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-  font-size: 1.4rem
+  font-size: 1.2rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Animación tarjetas */
 .tarjeta:hover {
   transform: translateY(-4px);
-  box-shadow:
-    0 10px 25px rgba(0, 0, 0, 0.12),
-    0 0 0 1px rgba(13, 110, 253, 0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
-/* Responsive inicio/acerca de mí */
+/* Responsive acerca de mí */
 @media (max-width: 992px) {
   .inicio-grid {
     grid-template-columns: 1fr;
     text-align: center;
   }
 
-  .inicio-texto-tarjetas {
+  .inicio-tarjetas {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .inicio-tarjetas.izquierda,
+  .inicio-tarjetas.derecha {
     align-items: center;
   }
 
-  .inicio-tarjetas {
-    justify-content: center;
+  .tarjeta {
+    max-width: 300px;
   }
 }
-
 
 /* SECCIÓN HABILIDADES */
 .habilidades {
@@ -185,7 +189,6 @@ main {
   font-size: 0.9rem;
 }
 
-/* Efecto hover */
 .habilidad:hover img {
   transform: scale(1.2);
   filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.25));
@@ -216,14 +219,14 @@ main {
 .card-container {
   display: flex;
   justify-content: center;
-  gap: 60px;
+  gap: 150px;
   padding: 40px 0;
   flex-wrap: wrap;
 }
 
 .flip-card {
-  width: 480px;
-  height: 350px;
+  width: 350px;
+  height: 200px;
   perspective: 1000px;
 }
 
@@ -250,14 +253,14 @@ main {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
 }
 
-/* Estilos frente tarjta */
+/* Estilos frente tarjeta */
 .flip-front img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* Estilos revesro tarjeta */
+/* Estilos reverso tarjeta */
 .flip-back {
   background: #f8f9fa;
   color: #212529;
@@ -270,13 +273,13 @@ main {
 }
 
 .flip-back h3 {
-  font-size: 2rem;
+  font-size: 1.3rem;
   margin: 0;
 }
 
 .flip-back p {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   opacity: 0.9;
 }
 
@@ -285,6 +288,204 @@ main {
   .card-container {
     flex-direction: column;
     align-items: center;
+  }
+}
+
+/* SECCIÓN PROYECTOS */
+.proyectos {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  text-align: center;
+  border-bottom: 5px solid #dee2e6;
+}
+
+.proyectos h2 {
+  font-size: 2.2rem;
+  margin-bottom: 3rem;
+}
+
+/* Contenedor */
+.proyectos-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Card proyecto */
+.proyecto-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 1px solid #dee2e6;
+  max-width: 420px;
+  width: 100%;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.proyecto-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen proyecto */
+.proyecto-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Info proyecto */
+.proyecto-info {
+  padding: 1.5rem;
+}
+
+.proyecto-tipo {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 0.5rem;
+}
+
+.proyecto-titulo {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+/* Botón GitHub */
+.proyecto-boton {
+  display: inline-block;
+  text-decoration: none;
+  background: #212529;
+  color: white;
+  font-weight: 600;
+  border: 2px solid #212529;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.proyecto-boton:hover {
+  background: #f8f9fa;
+  color: black;
+}
+
+/* Responsive proyectos */
+@media (max-width: 768px) {
+  .proyecto-card {
+    max-width: 100%;
+  }
+}
+
+
+/* SECCIÓN CONTACTO */
+.contacto {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  text-align: center;
+  border-bottom: 5px solid #dee2e6;
+}
+
+.contacto h2 {
+  font-size: 2.2rem;
+  margin-bottom: 3rem;
+}
+
+.contacto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* formulario */
+.contacto-formulario {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #dee2e6;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.campo label {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.campo input,
+.campo textarea {
+  padding: 0.7rem;
+  border-radius: 6px;
+  border: 1px solid #ced4da;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: #0d6efd;
+}
+
+/* Botón */
+.btn-contacto {
+  width: 50%;
+  padding: 0.8rem;
+  background: #212529;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.btn-contacto:hover {
+  background: #f8f9fa ! important;
+  color: black;
+  border: 2px solid #212529;
+
+}
+
+/* Información de contacto */
+.contacto-info {
+  text-align: left;
+  padding: 2rem;
+}
+
+.contacto-info h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.contacto-info p {
+  margin-bottom: 1.3rem;
+  font-size: 1.1rem;
+}
+
+.contacto-info i {
+  font-size: 1.4rem;
+  margin-right: 0.5rem;
+}
+
+.contacto-texto {
+  margin-top: 2rem;
+  opacity: 0.85;
+}
+
+/* Responsive contacto */
+@media (max-width: 900px) {
+  .contacto-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contacto-info {
+    text-align: center;
   }
 }
 

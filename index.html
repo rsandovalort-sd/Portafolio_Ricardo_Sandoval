@@ -16,10 +16,12 @@
 <header class="encabezado">
   <nav class="navbar navbar-expand-xl navbar-light bg-body-tertiary nav-arreglos">
     <div class="container">
+      <!-- Título y ícono página -->
       <a class="navbar-brand" href="#acerca_de_mi">Ricardo Sandoval Ortiz</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <!-- Menú -->
       <div class="collapse navbar-collapse justify-content-center" id="mainNav">
         <ul class="navbar-nav nav-underline">
           <li class="nav-item">
@@ -32,7 +34,7 @@
             <a class="nav-link" href="#estudios">Mis estudios</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#portafolio">Portafolio</a>
+            <a class="nav-link" href="#proyectos">Proyectosmi</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#contacto">Contacto</a>
@@ -44,25 +46,24 @@
 </header>
 
 <main>
-  <!-- Sección Inicio / Acerca de mí -->
+  <!-- Sección Acerca de mí -->
   <section class="inicio" id="acerca-de-mi">
+    <h1 class="inicio-titulo">¡Hola! Mi nombre es Ricardo y soy Desarrollador Full Stack</h1>
     <div class="inicio-grid">
-      <div class="inicio-imagen">
+      <!-- Tarjetas a la izquierda -->
+      <div class="inicio-tarjetas izquierda">
+        <div class="tarjeta">Me gusta crear soluciones web innovadoras y creativas.</div>
+        <div class="tarjeta">Actualmente estoy cursando un bootcamp con Generation-Colombia.</div>
+      </div>
+      <!-- Imagen en el centro -->
+      <div class="inicio-centro">
         <img src="/images/image.png" alt="Foto de Ricardo">
       </div>
 
-      <div class="inicio-texto-tarjetas">
-        <div class="inicio-texto">
-          <h1>¡Hola! Soy Ricardo y soy Desarrollador Full Stack</h1>
-          <h3> Algunos datos sobre mí...</h3>
-        </div>
-
-        <div class="inicio-tarjetas">
-          <div class="tarjeta"> Me gusta crear soluciones web innovadoras y creativas.</div>
-          <div class="tarjeta">Actualemente estoy cursando un bootcamp con Generation-Colombia.</div>
-          <div class="tarjeta">Me considero una persona que le gusta resolver retos y trabajar en equipo.</div>
-          <div class="tarjeta">Soy historiador de formación profesional.</div>
-        </div>
+      <!-- Tarjetas a la deracha -->
+      <div class="inicio-tarjetas derecha">
+        <div class="tarjeta">Me considero una persona que le gusta resolver retos y trabajar en equipo.</div>
+        <div class="tarjeta">Soy historiador de formación profesional.</div>
       </div>
     </div>
   </section>
@@ -169,18 +170,80 @@
       </div>
     </div>
   </section>
-</main>
 
+  <!-- Sección Proyectos -->
+  <section id="proyectos" class="proyectos">
+    <h2>Proyectos</h2>
+
+    <div class="proyectos-container">
+      <div class="proyecto-card">
+        <!-- Imagen -->
+        <img src="/images/LogoLetal.png" alt="Proyecto E-commerce">
+        <!-- Titulos card -->
+        <div class="proyecto-info">
+          <span class="proyecto-tipo">E-commerce</span>
+          <h3 class="proyecto-titulo">Tienda Online</h3>
+          <!-- Botón git Hub -->
+          <a href="https://github.com/rsandovalort-sd" target="_blank" rel="noopener"class="proyecto-boton"> Ver en GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Sección Contacto -->
+  <section id="contacto" class="contacto">
+    <h2>Contacto</h2>
+
+    <div class="contacto-grid">
+      <!-- formulario -->
+      <div class="contacto-formulario">
+        <form>
+          <div class="campo">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" placeholder="Escribe aquí tu nombre" required>
+          </div>
+          <div class="campo">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" placeholder="Escribe aquí tu correo" required>
+          </div>
+          <div class="campo">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" placeholder="Escribe aquí tu número">
+          </div>
+          <div class="campo">
+            <label for="mensaje">Motivo del contacto</label>
+            <textarea id="mensaje" rows="4" placeholder="Escribe el motivo de tu contacto"></textarea>
+          </div>
+          <!-- Botón de formulario -->
+          <button type="submit" class="btn-contacto">
+            Enviar
+          </button>
+        </form>
+      </div>
+
+      <!-- Mi información -->
+      <div class="contacto-info">
+        <h3>Información de contacto</h3>
+        <p> <i class="bi bi-envelope"></i> <strong>Email:</strong><br> ricardo.sandoval@email.com </p>
+        <p> <i class="bi bi-telephone"></i> <strong>Teléfono:</strong> <br>+57 316 556 14 95</p>
+        <p class="contacto-texto">Puedes enviar el formulario, escríbeme a Whatsapp o al correo y te responderé pronto.</p>
+      </div>
+    </div>
+  </section>
+  
+</main>
+ 
 <!-- Footer de la página -->
 <footer class="footer">
   <div class="contenedor-footer">
     <h3> Ricardo Sandoval Ortiz</h3>
     <p>Desarrollador Full Stack</p>
     <!-- Iconos -->
-    <a href="" target="_blank" rel="noopener">
+    <a href="https://www.linkedin.com/in/ricardo-sandoval-ortiz-developer/" target="_blank" rel="noopener">
       <i class="bi bi-linkedin"></i>
     </a>
-    <a href="" target="_blank" rel="noopener">
+    <a href="https://github.com/rsandovalort-sd" target="_blank" rel="noopener">
       <i class="bi bi-github"></i>
     </a>
   </div>
