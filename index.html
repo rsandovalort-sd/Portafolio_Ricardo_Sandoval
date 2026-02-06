@@ -198,21 +198,21 @@
     <div class="contacto-grid">
       <!-- formulario -->
       <div class="contacto-formulario">
-        <form>
+        <form name="contacto" method = "POST" data-netlify="true ">
           <div class="campo">
             <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" placeholder="Escribe aquí tu nombre" required>
+            <input type="text" name="nombre" id="nombre" placeholder="Escribe aquí tu nombre" required>
           </div>
           <div class="campo">
             <label for="email">Correo electrónico</label>
-            <input type="email" id="email" placeholder="Escribe aquí tu correo" required>
+            <input type="email" name="email" id="email" placeholder="Escribe aquí tu correo" required>
           </div>
           <div class="campo">
             <label for="telefono">Teléfono</label>
-            <input type="tel" id="telefono" placeholder="Escribe aquí tu número">
+            <input type="tel" name="telefono" id="telefono" placeholder="Escribe aquí tu número">
           </div>
           <div class="campo">
-            <label for="mensaje">Motivo del contacto</label>
+            <label for="mensaje" name="mensaje">Motivo del contacto</label>
             <textarea id="mensaje" rows="4" placeholder="Escribe el motivo de tu contacto"></textarea>
           </div>
           <!-- Botón de formulario -->
