@@ -478,6 +478,23 @@ main {
   opacity: 0.85;
 }
 
+.btn-cv {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #212529;;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn-cv:hover {
+  background: #f8f9fa;
+  color: black;
+  border: 2px solid #212529;
+}
+
 /* Responsive contacto */
 @media (max-width: 900px) {
   .contacto-grid {
